@@ -1,5 +1,6 @@
 #include "Chassis.h"
 #include "../Robotmap.h"
+#include "../Commands/TeleOpMecanum.h"
 
 Chassis::Chassis() : Subsystem("Chassis") {
 	drive = new RobotDrive(1, 2, 3, 4);
@@ -7,7 +8,7 @@ Chassis::Chassis() : Subsystem("Chassis") {
     
 void Chassis::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
-	//SetDefaultCommand(new MySpecialCommand());
+	SetDefaultCommand(new TeleOpMecanum());
 }
 
 
