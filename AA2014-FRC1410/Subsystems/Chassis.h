@@ -10,11 +10,13 @@
  */
 class Chassis: public Subsystem {
 private:
+	RobotDrive* drive;
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
 public:
 	Chassis();
 	void InitDefaultCommand();
+	void MecanumDrive(Joystick* stick);
 };
 
 #endif
