@@ -2,7 +2,7 @@
 
 TeleOpMecanum::TeleOpMecanum() {
 	// Use requires() here to declare subsystem dependencies
-	// eg. requires(chassis);
+	Requires(chassis);
 }
 
 // Called just before this Command runs the first time
@@ -12,9 +12,8 @@ void TeleOpMecanum::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void TeleOpMecanum::Execute() {
-	
+	chassis->MecanumDrive(oi->GetStickAxis(1), oi->GetStickAxis(2), oi->GetStickAxis(3));
 }
-
 // Make this return true when this Command no longer needs to run execute()
 bool TeleOpMecanum::IsFinished() {
 	return false;
