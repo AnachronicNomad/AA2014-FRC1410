@@ -11,7 +11,7 @@ private:
 	JoystickButton *fire;
 public:
 	OI();
-	int OI::GetStickAxis(int axis1, int axis2, int axis3);
+	double OI::GetDriverStickAxis(int axis);
 };
 
 #endif

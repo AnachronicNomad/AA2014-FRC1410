@@ -7,10 +7,8 @@ OI::OI() {
 	
 	fire = new JoystickButton(stick2, 6);
 }
-int OI::GetStickAxis(int axis1, int axis2, int axis3)
+double OI::GetDriverStickAxis(int axis)
 {
-      return stick1->GetRawAxis(axis1);
-      return stick1->GetRawAxis(axis2);
-      return stick1->GetRawAxis(axis3);
+      return stick1->GetRawAxis(axis);
 }
 

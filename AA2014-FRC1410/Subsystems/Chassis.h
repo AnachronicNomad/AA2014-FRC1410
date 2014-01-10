@@ -16,7 +16,7 @@ private:
 public:
 	Chassis();
 	void InitDefaultCommand();
-	void MecanumDrive(Joystick* stick);
+	void MecanumDrive(double deltaX, double deltaY, double rot);
 };
 
 #endif

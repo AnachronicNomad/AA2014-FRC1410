@@ -13,7 +13,7 @@ void Chassis::InitDefaultCommand() {
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-void Chassis::MecanumDrive(Joystick* stick)
+void Chassis::MecanumDrive(double deltaX, double deltaY, double rot)
 {
-	drive->MecanumDrive_Cartesian(stick->GetRawAxis(1), stick->GetRawAxis(2), stick->GetRawAxis(3));
+	drive->MecanumDrive_Cartesian( deltaX, deltaY,rot,0.0);
 }
