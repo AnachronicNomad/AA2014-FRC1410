@@ -4,6 +4,9 @@
 
 Chassis::Chassis() : Subsystem("Chassis") {
 	drive = new RobotDrive(1, 2, 3, 4);
+	//gyro = new Gyro(1, 1);
+	drive->SetInvertedMotor(drive->kFrontRightMotor, true);
+	drive->SetInvertedMotor(drive->kRearRightMotor, true);
 }
     
 void Chassis::InitDefaultCommand() {
@@ -16,5 +19,5 @@ void Chassis::InitDefaultCommand() {
 // here. Call these from Commands.
 void Chassis::MecanumDrive(double deltaX, double deltaY, double rot)
 {
-	drive->MecanumDrive_Cartesian( deltaX, deltaY,rot,0.0);
+	drive->MecanumDrive_Cartesian( deltaX, deltaY,rot);
 }

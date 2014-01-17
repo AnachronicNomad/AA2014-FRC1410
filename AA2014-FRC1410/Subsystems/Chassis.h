@@ -11,6 +11,7 @@
 class Chassis: public Subsystem {
 private:
 	RobotDrive* drive;
+	//Gyro* gyro;
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
 public:
