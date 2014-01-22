@@ -7,6 +7,10 @@ Chassis::Chassis() : Subsystem("Chassis") {
 	//gyro = new Gyro(1, 1);
 	drive->SetInvertedMotor(drive->kFrontRightMotor, true);
 	drive->SetInvertedMotor(drive->kRearRightMotor, true);
+	//drive->SetInvertedMotor(drive->kFrontLeftMotor, true);
+	//drive->SetInvertedMotor(drive->kRearLeftMotor, true);
+	drive->SetSafetyEnabled(true);
+	drive->SetSensitivity(0.2);
 }
     
 void Chassis::InitDefaultCommand() {
