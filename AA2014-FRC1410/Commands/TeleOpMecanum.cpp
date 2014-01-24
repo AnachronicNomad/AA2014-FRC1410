@@ -12,7 +12,7 @@ void TeleOpMecanum::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void TeleOpMecanum::Execute() {
-	chassis->MecanumDrive(oi->GetDriverStickAxis(1), oi->GetDriverStickAxis(2), oi->GetDriverStickAxis(3));
+	chassis->MecanumDrive(oi->GetDriverStickAxis(1), oi->GetDriverStickAxis(2), (oi->GetDriverStickAxis(4) * -1));
 }
 // Make this return true when this Command no longer needs to run execute()
 bool TeleOpMecanum::IsFinished() {
