@@ -1,6 +1,7 @@
 #include "CommandBase.h"
 #include "Commands/Scheduler.h"
 #include "Subsystems/Chassis.h"
+#include "Subsystems/Intake.h"
 
 CommandBase::CommandBase(const char *name) : Command(name) {
 }
@@ -17,4 +18,5 @@ void CommandBase::init() {
 	
 	oi = new OI();
 	chassis = new Chassis();
+	intake = new Intake();
 }

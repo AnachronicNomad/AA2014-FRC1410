@@ -1,7 +1,7 @@
 #ifndef TELEOPMECANUM_H
 #define TELEOPMECANUM_H
 
-#include "../CommandBase.h"
+#include "../../CommandBase.h"
 
 /**
  *
