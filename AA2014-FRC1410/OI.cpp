@@ -30,6 +30,7 @@ OI::OI() {
 	stick1 = new Joystick(1);
 	stick2 = new Joystick(2);
 	
+	toggle_roller = new JoystickButton(stick2, 5);
 	fire = new JoystickButton(stick2, 6);
 }
 double OI::GetDriverStickAxis(int axis)
