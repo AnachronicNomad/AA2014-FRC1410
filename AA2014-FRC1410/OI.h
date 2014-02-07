@@ -13,7 +13,6 @@ private:
 public:
 	OI();
 	double OI::GetDriverStickAxis(int axis);
-	
 };
 
 #endif
