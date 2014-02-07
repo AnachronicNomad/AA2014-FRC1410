@@ -14,10 +14,11 @@ void Intake::InitDefaultCommand() {
 void Intake::SetDirectionRoller(int direction){
 	if (direction == 0){
 		rollerMotor->Set(Relay::kOff);
-		
+		//0 = false
 	}
 	else if (direction == 1){
 		rollerMotor->Set(Relay::kForward);	
+		//1 = true
 	}
 	
 }
