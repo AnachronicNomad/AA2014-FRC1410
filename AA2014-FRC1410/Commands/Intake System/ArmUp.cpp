@@ -14,7 +14,7 @@ void ArmUp::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ArmUp::Execute() {
-	if(potangle < MAXINTAKEANGLE){
+	if(potangle < MAX_INTAKE_ANGLE){
 		intake->SetSpeed(0.5);
 	}
 	else{

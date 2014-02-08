@@ -15,7 +15,7 @@ void ArmDown::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ArmDown::Execute() {
-	if(potangle > MININTAKEANGLE){
+	if(potangle > MIN_INTAKE_ANGLE){
 		intake->SetSpeed(-0.5);
 	}
 	else{

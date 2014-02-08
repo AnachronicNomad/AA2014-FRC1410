@@ -15,7 +15,7 @@ void ArmOperatorControl::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ArmOperatorControl::Execute() {
-	if(potangle > MININTAKEANGLE && potangle < MAXINTAKEANGLE){
+	if(potangle > MIN_INTAKE_ANGLE && potangle < MAX_INTAKE_ANGLE){
 		intake->SetSpeed(oi->GetCoPilotStickAxis(2));
 	}
 	else{
