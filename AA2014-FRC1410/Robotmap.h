@@ -13,7 +13,8 @@
 // following variables to use with your drivetrain subsystem.
 // #define LEFTMOTOR 1
 // #define RIGHTMOTOR 2
-
+#define MAXINTAKEANGLE 175
+#define MININTAKEANGLE 15
 // If you are using multiple modules, make sure to define both the port
 // number and the module. For example you with a rangefinder:
 // #define RANGE_FINDER_PORT 1
