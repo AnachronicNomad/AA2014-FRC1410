@@ -14,7 +14,7 @@ private:
 	// for methods that implement subsystem capabilities
 	Relay * rollerMotor; //Relay 1
 	Talon * leverArm;
-	AnalogChannel * pot;
+	AnalogChannel *intakePot;
 	
 	
 public:

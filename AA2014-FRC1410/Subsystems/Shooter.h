@@ -12,6 +12,17 @@ class Shooter: public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
+	Talon* angleMotor;
+	Talon* winchMotor;
+	
+	Encoder* winchPullBack;
+	AnalogChannel* shooterPot;
+	
+	Compressor* comp;
+	DoubleSolenoid* trigger;
+	
+	
+	
 public:
 	Shooter();
 	void InitDefaultCommand();

@@ -4,9 +4,23 @@
 #include <math.h>
 
 Chassis::Chassis() : Subsystem("Chassis") {
-	drive = new RobotDrive(1, 2, 3, 4);
-	encoder1 = new Encoder(1, 2);
-	encoder2 = new Encoder(3, 4, true);
+	drive = new RobotDrive(
+							CHASSIS_FL_PORT,
+							CHASSIS_RL_PORT,
+							CHASSIS_FR_PORT,
+							CHASSIS_RR_PORT
+							);
+	//encoder1 = new Encoder(1, 2);
+	//encoder2 = new Encoder(3, 4, true);
+	encoder1 = new Encoder(
+							CHASSIS_ENCODER_LEFT_CHAN_A_PORT,
+							CHASSIS_ENCODER_LEFT_CHAN_B_PORT
+							);
+	encoder2 = new Encoder(
+							CHASSIS_ENCODER_RIGHT_CHAN_A_PORT,
+							CHASSIS_ENCODER_RIGHT_CHAN_B_PORT,
+							true //Reverse direction because of Right side
+							);
 	encoder1->Start();
 	encoder2->Start();
 	encoder1->Reset();

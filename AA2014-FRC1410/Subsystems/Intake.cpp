@@ -2,9 +2,12 @@
 #include "../Robotmap.h"
 
 Intake::Intake() : Subsystem("Intake") {
-	rollerMotor = new Relay(1);
-	leverArm = new Talon(1);
-	pot = new AnalogChannel(1,1);
+	rollerMotor = new Relay(INTAKE_ROLLER_PORT_RELAY);
+	leverArm = new Talon(INTAKE_LIFT_ARM_PORT);
+	intakePot = new AnalogChannel(
+							INTAKE_ARM_POTENTIOMETER_PORT
+							);
+							
 }
     
 void Intake::InitDefaultCommand() {
@@ -24,7 +27,7 @@ void Intake::SetDirectionRoller(int direction){
 }
 
 double Intake::PotAngle(){
-	return (pot->GetVoltage());
+	return (intakePot->GetVoltage());
 }
 
 void Intake::SetSpeed(float speed){
