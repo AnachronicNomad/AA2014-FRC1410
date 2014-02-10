@@ -15,6 +15,7 @@ Elevator::Elevator() : Subsystem("Elevator") {
 								ELEVATOR_ENCODER_CHAN_A_PORT,
 								ELEVATOR_ENCODER_CHAN_B_PORT
 								);
+	heightEncoder->Start();
 }
     
 void Elevator::InitDefaultCommand() {
@@ -25,3 +26,29 @@ void Elevator::InitDefaultCommand() {
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
+bool Elevator::HitEnd(bool up)
+{
+	if(up)
+	{
+		return upperSwitch->Get();
+	}
+	else
+	{
+		return lowerSwitch->Get();
+	}
+}
+
+void Elevator::ResetEncoder()
+{
+	heightEncoder->Reset();
+}
+
+double Elevator::EncoderDistance()
+{
+	return heightEncoder->GetDistance();
+}
+
+void Elevator::SetSpeed(float speed)
+{
+	elevMotor->Set(speed);
+}

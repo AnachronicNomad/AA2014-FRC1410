@@ -21,6 +21,10 @@ private:
 public:
 	Elevator();
 	void InitDefaultCommand();
+	bool HitEnd(bool up);
+	void ResetEncoder();
+	double EncoderDistance();
+	void SetSpeed(float speed);
 };
 
 #endif

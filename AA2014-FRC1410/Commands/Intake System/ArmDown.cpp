@@ -5,7 +5,6 @@ ArmDown::ArmDown() {
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
 	Requires(intake);
-	potangle = intake->PotAngle();
 }
 
 // Called just before this Command runs the first time
@@ -15,6 +14,7 @@ void ArmDown::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void ArmDown::Execute() {
+	potangle = intake->PotAngle();
 	if(potangle > MIN_INTAKE_ANGLE){
 		intake->SetSpeed(-0.5);
 	}

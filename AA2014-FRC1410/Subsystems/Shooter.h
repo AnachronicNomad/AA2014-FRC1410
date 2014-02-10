@@ -26,6 +26,8 @@ private:
 public:
 	Shooter();
 	void InitDefaultCommand();
+	void SetDirectionTrigger(bool forward);
+	float ShooterAngle();
 };
 
 #endif

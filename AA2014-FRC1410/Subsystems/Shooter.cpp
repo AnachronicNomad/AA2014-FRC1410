@@ -35,3 +35,14 @@ void Shooter::InitDefaultCommand() {
 
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
+void Shooter::SetDirectionTrigger(bool forward)
+{
+	if(forward)
+	{
+		trigger->Set(DoubleSolenoid::kForward);
+	}
+	else
+	{
+		trigger->Set(DoubleSolenoid::kReverse);
+	}
+}
