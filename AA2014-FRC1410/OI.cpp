@@ -41,13 +41,12 @@ OI::OI() {
 	arm_up->WhenPressed(new ArmUp());
 	arm_down->WhenPressed(new ArmDown());
 }
-double OI::GetDriverStickAxis(int axis)
+double OI::GetDriverStickAxis(bool driver, int axis)
 {
-	return InputShape(stick1->GetRawAxis(axis));
-}
-double OI::GetCoPilotStickAxis(int axis)
-{
-	return (stick2->GetRawAxis(axis));
+	if(driver)
+	{return InputShape(stick1->GetRawAxis(axis));}
+	else
+	{return InputShape(stick2->GetRawAxis(axis));}
 }
 
 

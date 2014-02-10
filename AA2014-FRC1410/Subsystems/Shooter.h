@@ -28,6 +28,10 @@ public:
 	void InitDefaultCommand();
 	void SetDirectionTrigger(bool forward);
 	float ShooterAngle();
+	void AngleControlMotorSpeed(float speed);
+	void PullBackMotorSpeed(float speed);
+	double PullBackDistance();
+	void ResetEncoder();
 };
 
 #endif

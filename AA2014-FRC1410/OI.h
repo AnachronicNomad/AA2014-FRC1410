@@ -14,8 +14,7 @@ private:
 	JoystickButton *arm_down;
 public:
 	OI();
-	double OI::GetDriverStickAxis(int axis);
-	double OI::GetCoPilotStickAxis(int axis);
+	double OI::GetDriverStickAxis(bool driver, int axis);
 };
 
 #endif

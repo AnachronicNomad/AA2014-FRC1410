@@ -16,7 +16,7 @@ void ArmOperatorControl::Initialize() {
 void ArmOperatorControl::Execute() {
 	potangle = intake->PotAngle();
 	if(potangle > MIN_INTAKE_ANGLE && potangle < MAX_INTAKE_ANGLE){
-		intake->SetSpeed(oi->GetCoPilotStickAxis(2));
+		intake->SetSpeed(oi->GetDriverStickAxis(false,2));
 	}
 	else{
 		intake->SetSpeed(0);
@@ -36,4 +36,5 @@ void ArmOperatorControl::End() {
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void ArmOperatorControl::Interrupted() {
+	intake->SetSpeed(0.0);
 }

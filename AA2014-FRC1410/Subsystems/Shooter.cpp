@@ -46,3 +46,28 @@ void Shooter::SetDirectionTrigger(bool forward)
 		trigger->Set(DoubleSolenoid::kReverse);
 	}
 }
+
+float Shooter::ShooterAngle()
+{
+	return shooterPot->GetVoltage();
+}
+
+void Shooter::AngleControlMotorSpeed(float speed)
+{
+	angleMotor->Set(speed);
+}
+
+void Shooter::PullBackMotorSpeed(float speed)
+{
+	winchMotor->Set(speed);
+}
+
+double Shooter::PullBackDistance()
+{
+	return winchPullBack->GetDistance();
+}
+
+void Shooter::ResetEncoder()
+{
+	winchPullBack->Reset();
+}
