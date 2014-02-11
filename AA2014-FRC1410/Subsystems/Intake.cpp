@@ -23,7 +23,6 @@ void Intake::SetDirectionRoller(int direction){
 		rollerMotor->Set(Relay::kForward);	
 		//1 = true
 	}
-	
 }
 
 double Intake::PotAngle(){

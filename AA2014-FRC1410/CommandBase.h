@@ -5,6 +5,8 @@
 #include "OI.h"
 #include "Subsystems/Chassis.h"
 #include "Subsystems/Intake.h"
+#include "Subsystems/Shooter.h"
+#include "Subsystems/Elevator.h"
 
 
 /**
@@ -21,6 +23,8 @@ public:
 	static OI *oi;
 	static Chassis *chassis;
 	static Intake *intake;
+	static Elevator *elev;
+	static Shooter *shooter;
 };
 
 #endif

@@ -1,7 +1,7 @@
 #ifndef LIFTUPELEV_H
 #define LIFTUPELEV_H
 
-#include "../CommandBase.h"
+#include "../../CommandBase.h"
 
 /**
  *

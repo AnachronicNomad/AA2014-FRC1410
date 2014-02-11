@@ -43,9 +43,9 @@ void Elevator::ResetEncoder()
 	heightEncoder->Reset();
 }
 
-double Elevator::EncoderDistance()
+double Elevator::EncoderHeightRate()
 {
-	return heightEncoder->GetDistance();
+	return heightEncoder->GetRate();
 }
 
 void Elevator::SetSpeed(float speed)

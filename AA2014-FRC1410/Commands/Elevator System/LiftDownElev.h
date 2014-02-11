@@ -1,7 +1,7 @@
 #ifndef LIFTDOWNELEV_H
 #define LIFTDOWNELEV_H
 
-#include "../CommandBase.h"
+#include "../../CommandBase.h"
 
 /**
  *

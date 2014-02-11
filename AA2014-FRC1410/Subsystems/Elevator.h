@@ -23,7 +23,7 @@ public:
 	void InitDefaultCommand();
 	bool HitEnd(bool up);
 	void ResetEncoder();
-	double EncoderDistance();
+	double EncoderHeightRate();
 	void SetSpeed(float speed);
 };
 
