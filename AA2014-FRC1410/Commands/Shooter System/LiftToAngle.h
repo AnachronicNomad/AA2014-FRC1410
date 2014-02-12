@@ -2,6 +2,7 @@
 #define LIFTTOANGLE_H
 
 #include "../../CommandBase.h"
+#include "../../Robotmap.h"
 
 /**
  *
@@ -9,7 +10,7 @@
  * @author fifthparallel
  */
 class LiftToAngle: public CommandBase {
-	float m_angle;
+	float m_targetAngle;
 public:
 	LiftToAngle(float angle);
 	virtual void Initialize();

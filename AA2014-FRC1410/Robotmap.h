@@ -13,10 +13,17 @@
  * Useful Values
  */
 
-#define MAX_INTAKE_ANGLE 175
-#define MIN_INTAKE_ANGLE 15
-#define MAX_SHOOTER_ANGLE
-#define MIN_SHOOTER_ANGLE
+#define MAX_INTAKE_ANGLE 0
+#define MIN_INTAKE_ANGLE 0
+
+#define MAX_SHOOTER_ANGLE 0
+#define MIN_SHOOTER_ANGLE 0
+
+#define MAX_PULLBACK_DISTANCE 0
+#define POT_RANGE 0.006
+#define ELEV_SPEED 0.5
+#define WINCH_SPEED 0.5
+#define SHOOTER_LIFT_SPEED 0.5
 
 /**
  * Chassis Subsystem Ports
