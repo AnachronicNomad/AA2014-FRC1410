@@ -1,5 +1,6 @@
 #include "Intake.h"
 #include "../Robotmap.h"
+#include "../Commands/Intake System/ArmOperatorControl.h"
 
 Intake::Intake() : Subsystem("Intake") {
 	rollerMotor = new Relay(INTAKE_ROLLER_PORT_RELAY);
@@ -12,7 +13,7 @@ Intake::Intake() : Subsystem("Intake") {
     
 void Intake::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
-	//SetDefaultCommand(new MySpecialCommand());
+	SetDefaultCommand(new ArmOperatorControl());
 }
 void Intake::SetDirectionRoller(int direction){
 	if (direction == 0){

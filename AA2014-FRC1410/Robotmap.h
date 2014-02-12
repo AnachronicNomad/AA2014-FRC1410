@@ -21,6 +21,7 @@
 
 #define MAX_PULLBACK_DISTANCE 0
 #define POT_RANGE 0.006
+#define ENCODER_RANGE 1
 #define ELEV_SPEED 0.5
 #define WINCH_SPEED 0.5
 #define SHOOTER_LIFT_SPEED 0.5

@@ -9,9 +9,16 @@ private:
 	Joystick *stick2;
 	
 	JoystickButton *toggle_roller;
-	JoystickButton *fire;
 	JoystickButton *arm_up;
 	JoystickButton *arm_down;
+	
+	JoystickButton *fire;
+	JoystickButton *shooter_down;
+	JoystickButton *shooter_up;
+	JoystickButton *pullback;
+	
+	JoystickButton *elev_up;
+	JoystickButton *elev_down;
 public:
 	OI();
 	double OI::GetDriverStickAxis(bool driver, int axis);
