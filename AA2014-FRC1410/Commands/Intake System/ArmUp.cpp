@@ -11,7 +11,11 @@ ArmUp::ArmUp() {
 void ArmUp::Initialize() {
 	potangle = intake->PotAngle();
 		if(potangle < MAX_INTAKE_ANGLE){
-			intake->SetSpeed(0.5);
+			intake->SetSpeed((INTAKE_LIFT_SPEED));
+		}
+		else
+		{
+			intake->SetSpeed(-(INTAKE_LIFT_SPEED));
 		}
 }
 

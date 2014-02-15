@@ -11,8 +11,8 @@ ArmDown::ArmDown() {
 // Called just before this Command runs the first time
 void ArmDown::Initialize() {
 	potangle = intake->PotAngle();
-			if(potangle < MIN_INTAKE_ANGLE){
-				intake->SetSpeed(-0.5);
+			if(potangle > MIN_INTAKE_ANGLE){
+				intake->SetSpeed((INTAKE_LIFT_SPEED));
 			}
 }
 

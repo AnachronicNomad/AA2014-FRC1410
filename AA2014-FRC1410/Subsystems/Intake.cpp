@@ -13,7 +13,7 @@ Intake::Intake() : Subsystem("Intake") {
     
 void Intake::InitDefaultCommand() {
 	// Set the default command for a subsystem here.
-	SetDefaultCommand(new ArmOperatorControl());
+	//SetDefaultCommand(new ArmOperatorControl());
 }
 void Intake::SetDirectionRoller(int direction){
 	if (direction == 0){

@@ -1,4 +1,5 @@
 #include "LiftDownElev.h"
+#include "../../Robotmap.h"
 
 LiftDownElev::LiftDownElev() {
 	// Use requires() here to declare subsystem dependencies
@@ -10,7 +11,7 @@ LiftDownElev::LiftDownElev() {
 void LiftDownElev::Initialize() {
 	if(elev->HitEnd(false) == false)
 		{
-			elev->SetSpeed(-0.5);
+			elev->SetSpeed(-(ELEV_SPEED));
 		}
 }
 
