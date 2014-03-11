@@ -1,18 +1,18 @@
-#ifndef ARMDOWN_H
-#define ARMDOWN_H
+#ifndef WAITFORTIME_H
+#define WAITFORTIME_H
 
 #include "../../CommandBase.h"
 
 /**
  *
  *
- * @author Programming-1
+ * @author fifthparallel
  */
-class ArmDown: public CommandBase {
-private:
-	double potangle;
+class WaitForTime: public CommandBase {
+	float m_time;
+	Timer *timer;
 public:
-	ArmDown();
+	WaitForTime(float time);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

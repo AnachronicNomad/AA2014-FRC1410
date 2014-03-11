@@ -1,17 +1,17 @@
-#ifndef PULLBACK_H
-#define PULLBACK_H
+#ifndef TESTLIFTINTAKE_H
+#define TESTLIFTINTAKE_H
 
-#include "../../CommandBase.h"
-#include "../../Robotmap.h"
+#include "../../../CommandBase.h"
 
 /**
  *
  *
  * @author fifthparallel
  */
-class PullBack: public CommandBase {
+class TestLiftIntake: public CommandBase {
+	bool m_up;
 public:
-	PullBack();
+	TestLiftIntake(bool up);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

@@ -1,12 +1,20 @@
 #include "OI.h"
+/**
 #include "Commands/Intake System/ToggleRollersOn.h"
-#include "Commands/Intake System/ArmUp.h"
-#include "Commands/Intake System/ArmDown.h"
+#include "Commands/Intake System/IntakeLiftToPos.h"
 #include "Commands/Shooter System/Fire.h"
 #include "Commands/Shooter System/LiftToAngle.h"
 #include "Commands/Shooter System/PullBack.h"
 #include "Commands/Elevator System/LiftDownElev.h"
 #include "Commands/Elevator System/LiftUpElev.h"
+**/
+
+#include "Commands/TestCommands/Elevator/TestLiftElev.h"
+#include "Commands/TestCommands/Intake/TestLiftIntake.h"
+#include "Commands/TestCommands/Intake/ToggleRollers.h"
+#include "Commands/TestCommands/Shooter/AngleControl.h"
+#include "Commands/TestCommands/Shooter/TestFire.h"
+#include "Commands/TestCommands/Shooter/TestWinch.h"
 
 const char inputShape[255] = {0,1,3,4,5,6,7,9,10,11,12,13,15,16,17,18,19,21,22,23,24,25,27,28,29,30,31,
 	        33,34,35,36,37,38,40,41,42,43,44,46,47,48,49,50,52,53,54,55,56,58,59,60,61,62,
@@ -43,16 +51,16 @@ OI::OI() {
 	arm_down = new JoystickButton(stick2, 1);
 	
 	fire = new JoystickButton(stick2, 6);
+	/**
 	shooter_down = new JoystickButton(stick2, 3);
 	shooter_up = new JoystickButton(stick2, 4);
+	**/
 	pullback = new JoystickButton(stick2, 8);
 	
-	elev_up = new JoystickButton(stick2, 9);
-	elev_down = new JoystickButton(stick2, 10);
-	
+	elev_toggle = new JoystickButton(stick2, 4);
+	/**
 	toggle_roller->WhenPressed(new ToggleRollersOn());
-	arm_up->WhenPressed(new ArmUp());
-	arm_down->WhenPressed(new ArmDown());
+	arm_down->WhenPressed(new IntakeLiftToPos());
 	
 	fire->WhenPressed(new Fire());
 	shooter_down->WhenPressed(new LiftToAngle(MIN_SHOOTER_ANGLE));
@@ -61,7 +69,16 @@ OI::OI() {
 	
 	elev_up->WhenPressed(new LiftUpElev());
 	elev_down->WhenPressed(new LiftDownElev());
+	**/
+
+	toggle_roller->WhenPressed(new ToggleRollers());
+	arm_up->WhileHeld(new TestLiftIntake(true));
+	arm_down->WhileHeld(new TestLiftIntake(false));
 	
+	fire->WhenPressed(new TestFire());
+	pullback->WhenPressed(new TestWinch());
+	
+	elev_toggle->WhenPressed(new TestLiftElev());
 }
 double OI::GetDriverStickAxis(bool driver, int axis)
 {

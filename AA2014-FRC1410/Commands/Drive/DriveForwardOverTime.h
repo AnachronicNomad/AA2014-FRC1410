@@ -1,18 +1,18 @@
-#ifndef LIFTTOANGLE_H
-#define LIFTTOANGLE_H
+#ifndef DRIVEFORWARDOVERTIME_H
+#define DRIVEFORWARDOVERTIME_H
 
 #include "../../CommandBase.h"
-#include "../../Robotmap.h"
 
 /**
  *
  *
  * @author fifthparallel
  */
-class LiftToAngle: public CommandBase {
-	float m_targetAngle;
+class DriveForwardOverTime: public CommandBase {
+	float m_time;
+	Timer *timer;
 public:
-	LiftToAngle(float angle);
+	DriveForwardOverTime(float time);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

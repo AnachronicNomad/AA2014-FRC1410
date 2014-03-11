@@ -1,36 +1,34 @@
-#include "LiftUpElev.h"
-#include "../../Robotmap.h"
+#include "WaitForTime.h"
 
-LiftUpElev::LiftUpElev() {
+WaitForTime::WaitForTime(float time) {
 	// Use requires() here to declare subsystem dependencies
-	Requires(elev);
+	// eg. requires(chassis);
+	timer = new Timer();
+	m_time = time;
+	timer->Start();
 }
 
 // Called just before this Command runs the first time
-void LiftUpElev::Initialize() {
-	if(elev->HitEnd(true) == false)
-	{
-		elev->SetSpeed((ELEV_SPEED));
-	}
+void WaitForTime::Initialize() {
+	timer->Reset();
 }
 
 // Called repeatedly when this Command is scheduled to run
-void LiftUpElev::Execute() {
+void WaitForTime::Execute() {
 	
 }
 
 // Make this return true when this Command no longer needs to run execute()
-bool LiftUpElev::IsFinished() {
-	return elev->HitEnd(true);
+bool WaitForTime::IsFinished() {
+	return timer->Get() > m_time;
 }
 
 // Called once after isFinished returns true
-void LiftUpElev::End() {
-	elev->SetSpeed(0.0);
+void WaitForTime::End() {
+	
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void LiftUpElev::Interrupted() {
-	elev->SetSpeed(0.0);
+void WaitForTime::Interrupted() {
 }

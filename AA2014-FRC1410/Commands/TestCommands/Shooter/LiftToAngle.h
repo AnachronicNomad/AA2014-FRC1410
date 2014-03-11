@@ -1,16 +1,17 @@
-#ifndef LIFTDOWNELEV_H
-#define LIFTDOWNELEV_H
+#ifndef LIFTTOANGLE_H
+#define LIFTTOANGLE_H
 
-#include "../../CommandBase.h"
+#include "../../../CommandBase.h"
 
 /**
  *
  *
  * @author fifthparallel
  */
-class LiftDownElev: public CommandBase {
+class LiftToAngle: public CommandBase {
+	float m_angle;
 public:
-	LiftDownElev();
+	LiftToAngle(float angle);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

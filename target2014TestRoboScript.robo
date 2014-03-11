@@ -1,5 +1,5 @@
-<head><version>2.59.10</version></head>
-<Axis_Internet_Camera>
+<head><version>2.61.8</version></head>
+<Axis_Internet_Camera disabled>
   <auto_back_light>TRUE</auto_back_light>
   <auto_exposure>FALSE</auto_exposure>
   <auto_white_balance>TRUE</auto_white_balance>
@@ -142,3 +142,13 @@ end if
   <northwest>BLOB_COUNT
 </northwest>
 </Display_Variables>
+<NetworkTables>
+  <delay>50</delay>
+  <filter_type_index>0</filter_type_index>
+  <hostname>10.14.10.2</hostname>
+  <port>1735</port>
+  <prefix>/SmartDashboard/</prefix>
+  <variables_to_send>Hot
+Target</variables_to_send>
+  <variable_type_index>1</variable_type_index>
+</NetworkTables>

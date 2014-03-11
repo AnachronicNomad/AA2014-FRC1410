@@ -1,16 +1,17 @@
-#ifndef LIFTUPELEV_H
-#define LIFTUPELEV_H
+#ifndef TESTFIRE_H
+#define TESTFIRE_H
 
-#include "../../CommandBase.h"
+#include "../../../CommandBase.h"
 
 /**
  *
  *
  * @author fifthparallel
  */
-class LiftUpElev: public CommandBase {
+class TestFire: public CommandBase {
+	Timer *timer;
 public:
-	LiftUpElev();
+	TestFire();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
