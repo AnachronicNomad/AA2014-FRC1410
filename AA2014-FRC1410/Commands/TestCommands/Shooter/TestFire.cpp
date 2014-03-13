@@ -3,6 +3,7 @@
 TestFire::TestFire() {
 	// Use requires() here to declare subsystem dependencies
 	//Requires(shooter);
+	SetTimeout(2.0);
 	timer = new Timer();
 	timer->Start();
 }

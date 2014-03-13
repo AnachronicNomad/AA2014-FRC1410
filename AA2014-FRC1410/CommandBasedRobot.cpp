@@ -3,6 +3,7 @@
 #include "CommandBase.h"
 #include "Commands/Autonomous/HotFirst.h"
 #include "Commands/Autonomous/NotHotFirst.h"
+#include "Commands/Autonomous/PreAutoGroup.h"
 
 class CommandBasedRobot : public IterativeRobot {
 private:
@@ -11,34 +12,44 @@ private:
 	NetworkTable *table;
 	Command *hotAutoCom;
 	Command *notHotAutoCom;
+	Command *preAutoCom;
 	
 	virtual void RobotInit() {
 		CommandBase::init();
 		//autonomousCommand = new Command();
 		hotAutoCom = new HotFirst();
 		notHotAutoCom = new NotHotFirst();
+		preAutoCom = new PreAutoGroup();
 		lw = LiveWindow::GetInstance();
 		table = NetworkTable::GetTable("SmartDashboard");
 	}
 	
 	virtual void AutonomousInit() {
+		preAutoCom->Start();
+		while(preAutoCom->IsRunning() == true)
+		{
+			printf("Running Inital Setup for Auto\n");
+		}
+		if(preAutoCom->IsRunning() == false)
+		{
 			if(table->GetBoolean("Target", false))
-			{
-				if(table->GetBoolean("Hot", false))
-				{
-					printf("Auto Hot\n");
-					hotAutoCom->Start();
-				}
-				else
-				{
-					printf("Auto Not Hot\n");
-					notHotAutoCom->Start();
-				}
-			}
-			else
-			{
-				printf("No Target\n");
-			}
+						{
+							if(table->GetBoolean("Hot", false))
+							{
+								printf("Auto Hot\n");
+								hotAutoCom->Start();
+							}
+							else
+							{
+								printf("Auto Not Hot\n");
+								notHotAutoCom->Start();
+							}
+						}
+						else
+						{
+							printf("No Target\n");
+						}
+		}
 	}
 	
 	virtual void AutonomousPeriodic() {

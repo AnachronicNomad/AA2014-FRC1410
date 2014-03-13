@@ -24,12 +24,15 @@ NotHotFirst::NotHotFirst() {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+	/**
 	AddParallel(new DriveForwardOverTime(0.75));
 	AddParallel(new LiftToAngle(AUTO_SECOND_ANGLE));
 	
 	AddParallel(new TestLiftIntake(false));
 	
 	AddSequential(new TestWinch());
-	AddSequential(new WaitForTime(5.0));
+	**/
+	AddSequential(new WaitForTime(4.0));
 	AddSequential(new TestFire());
+	AddSequential(new DriveForwardOverTime(0.7));
 }
