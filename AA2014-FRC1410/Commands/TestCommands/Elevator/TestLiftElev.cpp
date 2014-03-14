@@ -10,25 +10,24 @@ TestLiftElev::TestLiftElev() {
 // Called just before this Command runs the first time
 void TestLiftElev::Initialize() {
 	m_up = !m_up;
-	if(m_up)
-	{
-		if(elev->UpperSwitch() == false)
-		{
-			elev->SetSpeed((ELEV_SPEED));
-		}
-	}
-	else
-	{
-		if(elev->LowerSwitch() == false)
-		{
-			elev->SetSpeed((ELEV_SPEED) * -1);
-		}
-	}
 }
 
 // Called repeatedly when this Command is scheduled to run
 void TestLiftElev::Execute() {
-	
+	if(m_up)
+		{
+			if(elev->UpperSwitch() == false)
+			{
+				elev->SetSpeed((ELEV_SPEED));
+			}
+		}
+		else
+		{
+			if(elev->LowerSwitch() == false)
+			{
+				elev->SetSpeed((ELEV_SPEED) * -1);
+			}
+		}
 }
 
 // Make this return true when this Command no longer needs to run execute()
