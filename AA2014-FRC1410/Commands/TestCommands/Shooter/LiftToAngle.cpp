@@ -3,7 +3,7 @@
 
 LiftToAngle::LiftToAngle(float angle) {
 	// Use requires() here to declare subsystem dependencies
-	Requires(shooter);
+	//Requires(shooter);
 	m_angle = angle;
 }
 
@@ -15,11 +15,11 @@ void LiftToAngle::Initialize() {
 void LiftToAngle::Execute() {
 	if(shooter->AnglePotVoltage() < m_angle)
 	{
-		shooter->SetSpeedAngle(-0.9);
+		shooter->SetSpeedAngle(SHOOTER_LIFT_SPEED);
 	}
 	else if(shooter->AnglePotVoltage() > m_angle)
 	{
-		shooter->SetSpeedAngle(0.9);
+		shooter->SetSpeedAngle((SHOOTER_LIFT_SPEED) * -1);
 	}
 	SmartDashboard::PutNumber("Shooter Angle", shooter->AnglePotVoltage());
 }
