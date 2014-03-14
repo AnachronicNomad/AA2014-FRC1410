@@ -12,7 +12,7 @@ void AngleControl::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void AngleControl::Execute() {
-	shooter->SetSpeedAngle(oi->GetDriverStickAxis(false,2));
+	shooter->SetSpeedAngle(oi->GetDriverStickAxis(false,2) * -1);
 	SmartDashboard::PutNumber("Shooter Angle", shooter->AnglePotVoltage());
 }
 
