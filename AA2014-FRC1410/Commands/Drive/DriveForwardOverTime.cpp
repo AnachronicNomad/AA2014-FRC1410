@@ -15,7 +15,7 @@ void DriveForwardOverTime::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void DriveForwardOverTime::Execute() {
-	chassis->MecanumDrive(0.0,0.7,0.0);
+	chassis->MecanumDrive(0.0,-0.7,0.0);
 	SmartDashboard::PutNumber("Time auto drive forward", m_time);
 }
 
