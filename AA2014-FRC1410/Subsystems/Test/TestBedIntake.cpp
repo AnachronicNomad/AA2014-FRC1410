@@ -36,9 +36,11 @@ void TestBedIntake::SetDirectionRoller(bool on)
 	if(on)
 	{
 		roller->Set(Relay::kForward);
+		SmartDashboard::PutBoolean("roller intake", on);
 	}
 	else
 	{
 		roller->Set(Relay::kOff);
+		SmartDashboard::PutBoolean("roller intake", on);
 	}
 }

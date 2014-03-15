@@ -1,17 +1,18 @@
-#ifndef LIFTTOANGLE_H
-#define LIFTTOANGLE_H
+#ifndef WAITFORTIME_H
+#define WAITFORTIME_H
 
-#include "../../../CommandBase.h"
+#include "../../CommandBase.h"
 
 /**
  *
  *
  * @author fifthparallel
  */
-class LiftToAngle: public CommandBase {
-	int m_angle;
+class WaitForTime: public CommandBase {
+	float m_time;
+	Timer *timer;
 public:
-	LiftToAngle(int angle);
+	WaitForTime(float time);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

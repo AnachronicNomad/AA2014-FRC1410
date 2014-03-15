@@ -13,7 +13,7 @@
  * Useful Values
  */
 
-#define AUTO_FIRST_ANGLE 2.86
+#define AUTO_FIRST_ANGLE 29
 #define AUTO_SECOND_ANGLE 3.0
 
 #define MAX_INTAKE_ANGLE 3.6
@@ -29,7 +29,7 @@
 #define ELEV_SPEED -0.65
 #define WINCH_SPEED 0.5
 #define SHOOTER_LIFT_SPEED -0.8
-#define INTAKE_LIFT_SPEED -0.75
+#define INTAKE_LIFT_SPEED -0.5
 
 /**
  * Chassis Subsystem Ports

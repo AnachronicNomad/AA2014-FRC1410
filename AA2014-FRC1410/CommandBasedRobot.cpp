@@ -7,17 +7,17 @@ class CommandBasedRobot : public IterativeRobot {
 private:
 
 	LiveWindow *lw;
-	//Command *hotAutoCom;
+	Command *hotAutoCom;
 
 	
 	virtual void RobotInit() {
 		CommandBase::init();
-		//hotAutoCom = new HotFirst();
+		hotAutoCom = new HotFirst();
 		lw = LiveWindow::GetInstance();
 	}
 	
 	virtual void AutonomousInit() {
-		//hotAutoCom->Start();
+		hotAutoCom->Start();
 	}
 	
 	virtual void AutonomousPeriodic() {
@@ -30,6 +30,7 @@ private:
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
 		//autonomousCommand->Cancel();
+		hotAutoCom->Cancel();
 	}
 	
 	virtual void TeleopPeriodic() {

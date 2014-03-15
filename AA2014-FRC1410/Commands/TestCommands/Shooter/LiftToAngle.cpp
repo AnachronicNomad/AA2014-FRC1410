@@ -1,7 +1,7 @@
 #include "LiftToAngle.h"
 #include "../../../Robotmap.h"
 
-LiftToAngle::LiftToAngle(float angle) {
+LiftToAngle::LiftToAngle(int angle) {
 	// Use requires() here to declare subsystem dependencies
 	//Requires(shooter);
 	m_angle = angle;
@@ -13,11 +13,11 @@ void LiftToAngle::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void LiftToAngle::Execute() {
-	if(shooter->AnglePotVoltage() < m_angle)
+	if( (int)((shooter->AnglePotVoltage() * 10)) < m_angle)
 	{
 		shooter->SetSpeedAngle(SHOOTER_LIFT_SPEED);
 	}
-	else if(shooter->AnglePotVoltage() > m_angle)
+	else if((int)((shooter->AnglePotVoltage() * 10)) > m_angle)
 	{
 		shooter->SetSpeedAngle((SHOOTER_LIFT_SPEED) * -1);
 	}
@@ -26,7 +26,7 @@ void LiftToAngle::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool LiftToAngle::IsFinished() {
-	return ((shooter->AnglePotVoltage() > m_angle - POT_RANGE) && (shooter->AnglePotVoltage() < m_angle + POT_RANGE));
+	return ((shooter->AnglePotVoltage() > m_angle - 1) && (shooter->AnglePotVoltage() < m_angle + 1));
 	//return false;
 }
 
