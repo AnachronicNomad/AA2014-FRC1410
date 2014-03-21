@@ -28,7 +28,7 @@
 #define ENCODER_RANGE 1
 #define ELEV_SPEED -0.65
 #define WINCH_SPEED 0.5
-#define SHOOTER_LIFT_SPEED -0.8
+#define SHOOTER_LIFT_SPEED -0.65
 #define INTAKE_LIFT_SPEED -0.5
 
 /**

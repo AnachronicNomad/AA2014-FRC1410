@@ -2,17 +2,20 @@
 #include "Commands/Command.h"
 #include "CommandBase.h"
 #include "Commands/Autonomous/HotFirst.h"
+#include "Commands/TestCommands/Shooter/TestFire.h"
 
 class CommandBasedRobot : public IterativeRobot {
 private:
 
 	LiveWindow *lw;
 	Command *hotAutoCom;
+	Command *fireDisengage;
 
 	
 	virtual void RobotInit() {
 		CommandBase::init();
 		hotAutoCom = new HotFirst();
+		fireDisengage = new TestFire();
 		lw = LiveWindow::GetInstance();
 	}
 	
@@ -39,6 +42,10 @@ private:
 	
 	virtual void TestPeriodic() {
 		lw->Run();
+	}
+	
+	virtual void DisabledInit() {
+		fireDisengage->Start();
 	}
 };
 

@@ -12,7 +12,8 @@ void TestWinch::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void TestWinch::Execute() {
-	shooter->SetSpeedWinch(1.0);
+	if(shooter->ShooterPulledBack() == false)
+		{shooter->SetSpeedWinch(1.0);}
 }
 
 // Make this return true when this Command no longer needs to run execute()

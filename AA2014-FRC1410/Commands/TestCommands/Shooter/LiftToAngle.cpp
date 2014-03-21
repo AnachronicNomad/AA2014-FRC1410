@@ -3,7 +3,7 @@
 
 LiftToAngle::LiftToAngle(int angle) {
 	// Use requires() here to declare subsystem dependencies
-	//Requires(shooter);
+	Requires(shooter);
 	m_angle = angle;
 }
 
@@ -26,7 +26,11 @@ void LiftToAngle::Execute() {
 
 // Make this return true when this Command no longer needs to run execute()
 bool LiftToAngle::IsFinished() {
-	return ((shooter->AnglePotVoltage() > m_angle - 1) && (shooter->AnglePotVoltage() < m_angle + 1));
+	return (
+			(((int)((shooter->AnglePotVoltage() * 10))) > m_angle -1)
+			&&
+			(((int)((shooter->AnglePotVoltage() * 10))) < m_angle +1)
+			);
 	//return false;
 }
 

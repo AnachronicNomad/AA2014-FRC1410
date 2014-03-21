@@ -3,6 +3,7 @@
 AngleControl::AngleControl() {
 	// Use requires() here to declare subsystem dependencies
 	Requires(shooter);
+	SetInterruptible(true);
 }
 
 // Called just before this Command runs the first time

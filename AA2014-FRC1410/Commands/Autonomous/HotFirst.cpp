@@ -2,6 +2,7 @@
 #include "../TestCommands/Shooter/LiftToAngle.h"
 #include "../TestCommands/Shooter/TestFire.h"
 #include "../TestCommands/Shooter/TestWinch.h"
+#include "../TestCommands/Shooter/ShooterLiftForTime.h"
 #include "../TestCommands/Intake/TestLiftIntake.h"
 #include "../Drive/DriveForwardOverTime.h"
 #include "WaitForTime.h"
@@ -24,27 +25,11 @@ HotFirst::HotFirst() {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-	/**
 	
-	
-	
-	AddSequential(new TestWinch());
-	//AddSequential(new TestFire());
-	 *
-	 */
-	//AddSequential(new LiftToAngle(AUTO_FIRST_ANGLE));
-	//AddSequential(new TestLiftIntake(false));
-	
-	/**
+	AddSequential(new ShooterLiftForTime(0.2));
+	AddSequential(new LiftToAngle(AUTO_FIRST_ANGLE), 3.0);
 	AddParallel(new TestLiftIntake(false));
 	AddSequential(new TestWinch());
-	AddSequential(new LiftToAngle(AUTO_FIRST_ANGLE));
-	AddSequential(new WaitForTime(1.0));
-	AddSequential(new TestFire());
-	AddSequential(new DriveForwardOverTime(0.7));
-	**/
-	AddParallel(new LiftToAngle(AUTO_FIRST_ANGLE));
-	AddParallel(new TestLiftIntake(false));
 	AddSequential(new TestWinch());
 	AddSequential(new TestFire());
 	AddSequential(new DriveForwardOverTime(0.7));
