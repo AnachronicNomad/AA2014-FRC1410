@@ -24,7 +24,7 @@ public:
 	CommandBase();
 	static void init();
 	// Create a single static instance of all of your subsystems
-	static OI *oi;
+	
 	static Chassis *chassis;
 	
 	/**
@@ -36,6 +36,8 @@ public:
 	static TestBedElevator *elev;
 	static TestBedIntake *intake;
 	static TestBedShooter *shooter;
+	
+	static OI *oi;
 };
 
 #endif
