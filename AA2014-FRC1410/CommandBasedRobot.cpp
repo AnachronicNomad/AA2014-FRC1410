@@ -9,13 +9,13 @@ private:
 
 	LiveWindow *lw;
 	Command *hotAutoCom;
-	Command *fireDisengage;
+	//Command *fireDisengage;
 
 	
 	virtual void RobotInit() {
 		CommandBase::init();
 		hotAutoCom = new HotFirst();
-		fireDisengage = new TestFire();
+		//fireDisengage = new TestFire();
 		lw = LiveWindow::GetInstance();
 	}
 	
@@ -43,10 +43,11 @@ private:
 	virtual void TestPeriodic() {
 		lw->Run();
 	}
-	
+	/**
 	virtual void DisabledInit() {
-		fireDisengage->Start();
+		//fireDisengage->Start();
 	}
+	**/
 };
 
 START_ROBOT_CLASS(CommandBasedRobot);
