@@ -16,6 +16,7 @@ HotFirst::HotFirst() {
 
         // To run multiple commands at the same time,
         // use AddParallel()
+	
         // e.g. AddParallel(new Command1());
         //      AddSequential(new Command2());
         // Command1 and Command2 will run in parallel.
@@ -25,13 +26,26 @@ HotFirst::HotFirst() {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-	
-	AddSequential(new ShooterLiftForTime(0.2));
-	AddSequential(new LiftToAngle(AUTO_FIRST_ANGLE), 3.0);
+	/**
+	AddSequential(new ShooterLiftForTime(0.4));
+	AddParallel(new LiftToAngle(AUTO_FIRST_ANGLE), 5.0);
+	AddParallel(new TestWinch());
 	AddParallel(new TestLiftIntake(false));
-	AddSequential(new TestWinch());
-	AddSequential(new TestWinch());
 	AddSequential(new TestFire());
 	AddSequential(new DriveForwardOverTime(0.7));
-
+	
+	AddParallel(new ShooterLiftForTime(0.85));
+	AddParallel(new TestLiftIntake(false));
+	AddSequential(new TestWinch());
+	//AddSequential(new TestLiftIntake(false));
+	AddSequential(new LiftToAngle(AUTO_FIRST_ANGLE), 5.0);
+	AddSequential(new TestFire());
+	AddSequential(new DriveForwardOverTime(0.7));
+	**/
+	AddParallel(new TestWinch());
+	AddSequential(new LiftToAngle(AUTO_FIRST_ANGLE), 5.0);
+	AddSequential(new TestLiftIntake(false));
+	AddSequential(new LiftToAngle(AUTO_FIRE_ANGLE), 5.0);
+	AddSequential(new TestFire());
+	AddSequential(new DriveForwardOverTime(0.7));
 }

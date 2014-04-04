@@ -13,7 +13,7 @@ ShooterLiftForTime::ShooterLiftForTime(double time) {
 // Called just before this Command runs the first time
 void ShooterLiftForTime::Initialize() {
 	timer->Reset();
-	shooter->SetSpeedAngle(SHOOTER_LIFT_SPEED);
+	shooter->SetSpeedAngle((SHOOTER_LIFT_SPEED) * -1);
 }
 
 // Called repeatedly when this Command is scheduled to run

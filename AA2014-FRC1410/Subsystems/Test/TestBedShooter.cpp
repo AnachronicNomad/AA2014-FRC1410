@@ -9,11 +9,13 @@ TestBedShooter::TestBedShooter() : Subsystem("TestBedShooter") {
 	pullback = new DigitalInput(14);
 	comp = new Compressor(11,2);
 	trigger = new DoubleSolenoid(1,2);
-	anglePot = new AnalogChannel(2);
+	angleEnc = new Encoder(1,2);
 	
 	comp->Start();
 	trigger->Set(DoubleSolenoid::kReverse);
 	winchMotor->SetSafetyEnabled(false);
+	angleEnc->Start();
+	angleEnc->Reset();
 }
     
 void TestBedShooter::InitDefaultCommand() {
@@ -50,8 +52,13 @@ bool TestBedShooter::ShooterPulledBack()
 {
 	return pullback->Get();
 }
-
+/**
 double TestBedShooter::AnglePotVoltage()
 {
 	return anglePot->GetVoltage();
+}
+**/
+double TestBedShooter::EncDistance()
+{
+	return angleEnc->GetDistance();
 }

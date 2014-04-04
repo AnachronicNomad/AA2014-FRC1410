@@ -13,23 +13,23 @@ void LiftToAngle::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void LiftToAngle::Execute() {
-	if( (int)((shooter->AnglePotVoltage() * 10)) < m_angle)
+	if( shooter->EncDistance() > m_angle)
 	{
 		shooter->SetSpeedAngle(SHOOTER_LIFT_SPEED);
 	}
-	else if((int)((shooter->AnglePotVoltage() * 10)) > m_angle)
+	else if(shooter->EncDistance() < m_angle)
 	{
 		shooter->SetSpeedAngle((SHOOTER_LIFT_SPEED) * -1);
 	}
-	SmartDashboard::PutNumber("Shooter Angle", shooter->AnglePotVoltage());
+	SmartDashboard::PutNumber("Shooter Angle", shooter->EncDistance());
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool LiftToAngle::IsFinished() {
 	return (
-			(((int)((shooter->AnglePotVoltage() * 10))) > m_angle -1)
+			(shooter->EncDistance() > m_angle -2)
 			&&
-			(((int)((shooter->AnglePotVoltage() * 10))) < m_angle +1)
+			(shooter->EncDistance() < m_angle +2)
 			);
 	//return false;
 }

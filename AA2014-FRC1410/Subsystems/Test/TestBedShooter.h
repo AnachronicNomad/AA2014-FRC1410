@@ -18,7 +18,8 @@ private:
 	DigitalInput *pullback;
 	Compressor *comp;
 	DoubleSolenoid *trigger;
-	AnalogChannel *anglePot;
+	//AnalogChannel *anglePot;
+	Encoder *angleEnc;
 public:
 	TestBedShooter();
 	void InitDefaultCommand();
@@ -26,7 +27,8 @@ public:
 	void SetSpeedWinch(float speed);
 	void SetSpeedAngle(float speed);
 	bool ShooterPulledBack();
-	double AnglePotVoltage();
+	//double AnglePotVoltage();
+	double EncDistance();
 };
 
 #endif

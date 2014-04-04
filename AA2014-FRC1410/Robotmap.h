@@ -13,8 +13,8 @@
  * Useful Values
  */
 
-#define AUTO_FIRST_ANGLE 29
-#define AUTO_SECOND_ANGLE 3.0
+#define AUTO_FIRST_ANGLE 75
+#define AUTO_FIRE_ANGLE 100
 
 #define MAX_INTAKE_ANGLE 3.6
 #define MID_INTAKE_ANGLE 2.18
@@ -28,7 +28,7 @@
 #define ENCODER_RANGE 1
 #define ELEV_SPEED -0.65
 #define WINCH_SPEED 0.5
-#define SHOOTER_LIFT_SPEED -0.65
+#define SHOOTER_LIFT_SPEED -0.75
 #define INTAKE_LIFT_SPEED -0.5
 
 /**
