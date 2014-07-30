@@ -1,5 +1,5 @@
-#ifndef INTAKE_H
-#define INTAKE_H
+#ifndef TESTBEDELEVATOR_H
+#define TESTBEDELEVATOR_H
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
 
@@ -8,22 +8,19 @@
  *
  * @author fifthparallel
  */
-class Intake: public Subsystem {
+class TestBedElevator: public Subsystem {
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
-	Relay * rollerMotor; //Relay 1
-	Talon * leverArm;
-	AnalogChannel *intakePot;
-	
-	
+	Jaguar *elevHeight;
+	DigitalInput *upperLimitSwitch;
+	DigitalInput *lowerLimitSwitch;
 public:
-	Intake();
+	TestBedElevator();
 	void InitDefaultCommand();
-	void SetDirectionRoller(int direction);
-	double PotAngle();
 	void SetSpeed(float speed);
-	
+	bool UpperSwitch();
+	bool LowerSwitch();
 };
 
 #endif

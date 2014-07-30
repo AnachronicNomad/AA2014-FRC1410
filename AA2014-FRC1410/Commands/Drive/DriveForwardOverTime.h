@@ -1,5 +1,5 @@
-#ifndef LIFTDOWNELEV_H
-#define LIFTDOWNELEV_H
+#ifndef DRIVEFORWARDOVERTIME_H
+#define DRIVEFORWARDOVERTIME_H
 
 #include "../../CommandBase.h"
 
@@ -8,9 +8,11 @@
  *
  * @author fifthparallel
  */
-class LiftDownElev: public CommandBase {
+class DriveForwardOverTime: public CommandBase {
+	float m_time;
+	Timer *timer;
 public:
-	LiftDownElev();
+	DriveForwardOverTime(float time);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

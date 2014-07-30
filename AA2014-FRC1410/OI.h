@@ -13,12 +13,13 @@ private:
 	JoystickButton *arm_down;
 	
 	JoystickButton *fire;
+	/**
 	JoystickButton *shooter_down;
 	JoystickButton *shooter_up;
+	**/
 	JoystickButton *pullback;
 	
-	JoystickButton *elev_up;
-	JoystickButton *elev_down;
+	JoystickButton *elev_toggle;
 public:
 	OI();
 	double OI::GetDriverStickAxis(bool driver, int axis);

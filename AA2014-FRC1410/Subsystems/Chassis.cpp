@@ -30,7 +30,7 @@ Chassis::Chassis() : Subsystem("Chassis") {
 	drive->SetInvertedMotor(drive->kRearRightMotor, true);
 	//drive->SetInvertedMotor(drive->kFrontLeftMotor, true);
 	//drive->SetInvertedMotor(drive->kRearLeftMotor, true);
-	drive->SetSafetyEnabled(true);
+	drive->SetSafetyEnabled(false);
 	drive->SetSensitivity(0.2);
 }
     

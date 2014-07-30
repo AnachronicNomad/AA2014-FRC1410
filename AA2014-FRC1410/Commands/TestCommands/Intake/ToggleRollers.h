@@ -1,17 +1,17 @@
-#ifndef FIRE_H
-#define FIRE_H
+#ifndef TOGGLEROLLERS_H
+#define TOGGLEROLLERS_H
 
-#include "../../CommandBase.h"
+#include "../../../CommandBase.h"
 
 /**
  *
  *
  * @author fifthparallel
  */
-class Fire: public CommandBase {
-	Timer* m_timer;
+class ToggleRollers: public CommandBase {
+	bool toggle;
 public:
-	Fire();
+	ToggleRollers();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

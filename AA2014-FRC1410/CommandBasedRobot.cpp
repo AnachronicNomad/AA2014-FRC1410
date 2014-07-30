@@ -1,20 +1,26 @@
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "CommandBase.h"
+#include "Commands/Autonomous/HotFirst.h"
+#include "Commands/TestCommands/Shooter/TestFire.h"
 
 class CommandBasedRobot : public IterativeRobot {
 private:
-	//Command *autonomousCommand;
+
 	LiveWindow *lw;
+	Command *hotAutoCom;
+	//Command *fireDisengage;
+
 	
 	virtual void RobotInit() {
 		CommandBase::init();
-		//autonomousCommand = new Command();
+		hotAutoCom = new HotFirst();
+		//fireDisengage = new TestFire();
 		lw = LiveWindow::GetInstance();
 	}
 	
 	virtual void AutonomousInit() {
-		//autonomousCommand->Start();
+		hotAutoCom->Start();
 	}
 	
 	virtual void AutonomousPeriodic() {
@@ -27,6 +33,7 @@ private:
 		// continue until interrupted by another command, remove
 		// this line or comment it out.
 		//autonomousCommand->Cancel();
+		hotAutoCom->Cancel();
 	}
 	
 	virtual void TeleopPeriodic() {
@@ -36,6 +43,11 @@ private:
 	virtual void TestPeriodic() {
 		lw->Run();
 	}
+	/**
+	virtual void DisabledInit() {
+		//fireDisengage->Start();
+	}
+	**/
 };
 
 START_ROBOT_CLASS(CommandBasedRobot);

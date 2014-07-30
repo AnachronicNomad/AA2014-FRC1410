@@ -1,33 +1,33 @@
-#include "PullBack.h"
+#include "AngleControl.h"
 
-PullBack::PullBack() {
+AngleControl::AngleControl() {
 	// Use requires() here to declare subsystem dependencies
 	Requires(shooter);
+	SetInterruptible(true);
 }
 
 // Called just before this Command runs the first time
-void PullBack::Initialize() {
-	shooter->ResetEncoder();
-	shooter->PullBackMotorSpeed(WINCH_SPEED);
-}
-
-// Called repeatedly when this Command is scheduled to run
-void PullBack::Execute() {
+void AngleControl::Initialize() {
 	
 }
 
+// Called repeatedly when this Command is scheduled to run
+void AngleControl::Execute() {
+	shooter->SetSpeedAngle(oi->GetDriverStickAxis(false,2) * -1);
+	SmartDashboard::PutNumber("Shooter Angle", shooter->EncDistance());
+}
+
 // Make this return true when this Command no longer needs to run execute()
-bool PullBack::IsFinished() {
-	return (shooter->PullBackDistance() > (MAX_PULLBACK_DISTANCE - ENCODER_RANGE));
+bool AngleControl::IsFinished() {
+	return false;
 }
 
 // Called once after isFinished returns true
-void PullBack::End() {
-	shooter->PullBackMotorSpeed(0.0);
+void AngleControl::End() {
+	
 }
 
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void PullBack::Interrupted() {
-	shooter->PullBackMotorSpeed(0.0);
+void AngleControl::Interrupted() {
 }

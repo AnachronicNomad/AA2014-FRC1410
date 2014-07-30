@@ -1,19 +1,16 @@
-#ifndef ARMUP_H
-#define ARMUP_H
+#ifndef TESTWINCH_H
+#define TESTWINCH_H
 
-#include "../../CommandBase.h"
+#include "../../../CommandBase.h"
 
 /**
  *
  *
- * @author Programming-1
+ * @author fifthparallel
  */
-
-class ArmUp: public CommandBase {
-private:
-	double potangle;
+class TestWinch: public CommandBase {
 public:
-	ArmUp();
+	TestWinch();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
